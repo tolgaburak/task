@@ -30,8 +30,6 @@ pure_urls_per_device = {}
 for record in database_records:
     device_type = record["Device_Type"]
     url = record["Stats_Access_Link"]
-
-    # Düzenli ifade ile saf URL bilgisini çıkar
     match = re.search(r'(?<=://)[a-z0-9_.]+(?=/)', url, re.IGNORECASE)
     if match:
         pure_url = match.group(0)
